@@ -1,0 +1,125 @@
+@charset "UTF-8";
+body {
+  font-family: "맑은 고딕", arial, sans-serif;
+  color: #333;
+  font-size: 12px;
+}
+
+header, main, footer {
+  width: 1280px;
+  background: #ccc;
+  margin: 0px auto;
+}
+
+header {
+  color: #00f;
+}
+
+header h1 {
+  font-size: 30px;
+}
+
+main {
+  margin: 15px auto;
+}
+
+.sns {
+  width: 200px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.sns li {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+.sns li i.fab, .sns li i.fas {
+  font-size: 30px;
+  color: #333;
+}
+
+.sns li:first-child:hover i {
+  color: #4267b2;
+}
+
+.sns li:nth-child(2):hover i {
+  color: #1da1f2;
+}
+
+.sns li:nth-child(3):hover i {
+  color: #e1306c;
+}
+
+.sns li:last-child:hover i {
+  color: #fffc00;
+}
+
+.list01 > li {
+  margin: 10px 0px;
+}
+
+.border01 {
+  border: 1px solid #333;
+}
+
+.border02 {
+  border: 3px solid #333;
+}
+
+.border03 {
+  border: 1px double #333;
+}
+
+.border04 {
+  border: 1px dotted #f00;
+}
+
+.kakao {
+  width: 380px;
+  height: 60px;
+  line-height: 30px;
+  border-radius: 5px;
+  border: 0px;
+  font-size: 18px;
+  margin-left: 10px;
+  background: rgb(251, 255, 0);
+  color: #333;
+}
+
+.face {
+  width: 380px;
+  height: 60px;
+  line-height: 30px;
+  border-radius: 5px;
+  border: 0px;
+  font-size: 18px;
+  margin-left: 10px;
+  background: #4267b2;
+  color: #fff;
+}
+
+.naver {
+  width: 380px;
+  height: 60px;
+  line-height: 30px;
+  border-radius: 5px;
+  border: 0px;
+  font-size: 18px;
+  margin-left: 10px;
+  background: rgb(35, 182, 5);
+  color: #fff;
+}
+
+.kakao i {
+  padding-right: 5px;
+}
+
+.face i {
+  padding-right: 5px;
+}
+
+.naver i {
+  padding-right: 5px;
+}/*# sourceMappingURL=style.css.map */

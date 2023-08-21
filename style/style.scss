@@ -1,0 +1,119 @@
+//변수생성
+$myFont: '맑은 고딕',arial,sans-serif;
+$baseFontColor:#333;
+$baseFontSize:12px;
+
+$titleFont_size:30px;
+$boxWidth:1280px;
+$boxCenter:0px auto;//전역변수
+
+$bg_color01:#ccc;
+
+body{
+    font-family: $myFont;
+    color: $baseFontColor;
+    font-size: $baseFontSize;
+}
+header,main,footer{
+    width: $boxWidth;
+    background: #ccc;
+    margin: $boxCenter;
+}
+header{
+    $txt_color01:#00f;//지역변수
+    color: $txt_color01;
+}
+header h1{
+    font-size: $titleFont_size;
+}
+main{margin: 15px auto;}
+footer{
+    //color:$txt_color01;
+    //지역변수기 때문에 서식이 적용안됨
+}
+
+
+
+//sns스타일 믹싱기법으로 만들기--------------------------------------------------
+@mixin sns{
+    font-size: $titleFont_size;
+    color: $baseFontColor;
+}
+@mixin hover01($sns_color01:#4267b2){
+    color: $sns_color01;
+}
+@mixin hover02($sns_color02:#1da1f2){
+    color: $sns_color02;
+}
+@mixin hover03($sns_color03:#e1306c){
+    color: $sns_color03;
+}
+@mixin hover04($sns_color04:#fffc00){
+    color: $sns_color04;
+}
+
+.sns{
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+}
+.sns li{
+    margin: 0px; padding: 0px;
+    list-style: none;
+}
+.sns li i.fab,.sns li i.fas{
+    @include sns;
+}
+.sns li:first-child:hover i{
+    @include hover01;
+}
+.sns li:nth-child(2):hover i{
+    @include hover02;
+}
+.sns li:nth-child(3):hover i{
+    @include hover03;
+}
+.sns li:last-child:hover i{
+    @include hover04;
+}
+
+//목록태그에 각각 테두리 서식적용하기
+.list01>li{
+    margin: 10px 0px;
+}
+@mixin border01($w:1px,$s:solid,$c:#333){
+    border: $w $s $c;
+}
+.border01{@include border01;}
+.border02{@include border01($w:3px);}
+.border03{@include border01($s:double);}
+.border04{@include border01($s:dotted,$c:#f00);}
+
+@mixin box($width:380px,$height:60px,$line-height:30px,$bdrd:5px,$b:0px,$fz:18px,$m-l:10px){
+    width: $width;
+    height: $height;
+    line-height: $line-height;
+    border-radius: $bdrd;
+    border:$b;
+    font-size: $fz;
+    margin-left: $m-l;
+
+}
+@mixin color($bg_color:rgb(251, 255, 0),$color:#333){
+    background:$bg_color;
+    color: $color;
+}
+@mixin color2($bg_color:#4267b2,$color:#fff){
+    background:$bg_color;
+    color: $color;
+}
+@mixin color3($bg_color:rgb(35, 182, 5),$color:#fff){
+    background:$bg_color;
+    color: $color;
+}
+.kakao{@include box;@include color;}
+.face{@include box;@include color2;}
+.naver{@include box;@include color3;}
+.kakao i{padding-right: 5px;}
+.face i{padding-right: 5px;}
+.naver i{padding-right: 5px;}

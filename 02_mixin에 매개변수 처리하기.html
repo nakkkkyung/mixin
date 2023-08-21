@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_mixin에 매개변수 처리하기</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <h2>02_mixin에 매개변수 처리하기</h2>
+    <pre>
+        <!--지난주내용-->
+        @mixin mixin명{
+            //반복해서 사용할 스타일 서식을 작성한다.
+        }
+
+        선택자{
+            @include mixin명;
+        } 
+        <!--추가 내용-->
+        @mixin 믹스인명($매개변수){
+            //재사용할 스타일 서식
+        }
+        @include 믹스인명(인수)
+    </pre>
+
+    <h3>실습예제1. sns아이콘(페이스북,트위터,인스타,카카오)을 삽입하여 믹싱기법으로 매개변수를 삽입하여 스타일 서식 만들기</h3>
+    <ul class="sns">
+        <li><i class="fab fa-facebook-square"></i></li>
+        <li><i class="fab fa-twitter-square"></i></li>
+        <li><i class="fab fa-instagram-square"></i></li>
+        <li><i class="fab fa-message"></i></li>
+    </ul>
+
+    <h3>@mixin에 매개변수 기본값 설정하기</h3>
+    <p>매개변수는 기본값으 가질 수 있다.</p>
+    <p>@include에서 별도의 인수가 전달되지않으면 기본값이 사용된다.</p>
+    <pre>
+        작성법)
+        @mixin 믹스인명($매개변수:기본값){
+            //적용하고자 하는 css 서식;
+        }
+    </pre>
+
+    <h3>실습2. 목록태그를 작성하여 목록별 테두리 서식을 각각 다르게 적용하기</h3>
+    <ul class="list01">
+        <li class="border01">기본 테두리값 적용하기</li>
+        <li class="border02">굵은 테두리값(3px) 적용하기</li>
+        <li class="border03">이중선(double) 테두리값 적용하기</li>
+        <li class="border04">점선(dotted) 테두리값 적용하기</li>
+    </ul>
+
+    <h3>실습3.카카오, 페이스북, 네이버 로그인 버튼을 mixin함수와 매개변수를 활용하여 적용하기</h3>
+    <img src="./sns.jfif" alt="">
+    <button class="kakao"><i class="fa-solid fa-message"></i> 카카오톡 로그인</button>
+    <button class="face"> <i class="fab fa-facebook-square"></i>Facebook으로 로그인</button>
+    <button class="naver"><i class="fa-brands fa-neos"></i>네이버로 로그인</button>
+</body>
+</html>
